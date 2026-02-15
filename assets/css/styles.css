@@ -1,0 +1,125 @@
+#line-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.18;
+}
+// Quantity should be the same in PUG
+$quantity: 15
+
+header.masthead {
+  position: relative;
+  overflow: hidden;
+}
+
+#line-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.masthead-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+html, body
+  height: 100%
+
+body
+  background: url(assets/img/my-profile-img.jpg)
+  background-size: cover
+    
+/* ==============================================================
+# Firefly Animation System
+============================================================== */
+
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ensure fireflies sit ABOVE the background image but BELOW the text */
+#line-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 2; 
+  pointer-events: none;
+  background: transparent;
+}
+
+/* The hero image provided by the template */
+#hero > img {
+  z-index: 1;
+}
+
+/* The text container */
+#hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Ensure the parent doesn't hide the glow */
+#line-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.firefly {
+  position: absolute;
+  width: 0.8vw; /* Slightly larger to see the color better */
+  height: 0.8vw;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* This is the "Lightbulb" of the firefly */
+.firefly::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  
+  /* FORCE YELLOW COLORS */
+  background-color: #ffff00 !important; 
+  background: radial-gradient(circle, #efe706 0%, #dbf305 100%);
+  
+  /* THE GLOW */
+  box-shadow: 0 0 15px 5px rgba(221, 241, 2, 0.8);
+  
+  /* Flash animation logic from your sample */
+  animation: flash-yellow ease infinite;
+}
+
+@keyframes flash-yellow {
+  0%, 30%, 100% {
+    opacity: 0;
+    box-shadow: 0 0 0vw 0vw rgba(255, 255, 0, 0);
+  }
+  5% {
+    opacity: 1;
+    box-shadow: 0 0 2vw 0.4vw rgba(255, 255, 0, 1);
+  }
+}
+
+/* Movement loop */
+@keyframes move-random {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(15vw, -25vh); }
+  100% { transform: translate(-5vw, -40vh); }
+}
+
+/* Make sure hero content stays on top of the fireflies */
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero img {
+  z-index: 1;
+}
