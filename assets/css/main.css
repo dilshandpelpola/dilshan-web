@@ -1528,3 +1528,21 @@ section,
 .logo-item:hover img {
   filter: grayscale(0%);
 }
+
+/* =========================================
+   CERTIFICATIONS MOBILE FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+  .logo-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .logo-item img {
+    margin-bottom: 15px;
+  }
+
+}
