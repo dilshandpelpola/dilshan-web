@@ -1502,7 +1502,7 @@ section,
 
 .logo-item {
   justify-content: center;
-  text-align: center;
+  text-align: Left;
 }
 
 .logo-item img {
