@@ -1495,3 +1495,33 @@ section,
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================
+   CERTIFICATION LOGO SIZE CONTROL
+========================================= */
+
+.logo-item {
+  justify-content: center;
+  text-align: center;
+}
+
+.logo-item img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .logo-item img {
+    height: 60px;
+  }
+}
+
+.logo-item img {
+  filter: grayscale(100%);
+  transition: 0.3s ease;
+}
+
+.logo-item:hover img {
+  filter: grayscale(0%);
+}
