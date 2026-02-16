@@ -1330,9 +1330,8 @@ section,
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(0, 255, 255, 0.9);
-  opacity: 0.8;
-  mix-blend-mode: screen;
+  background: rgba(180, 180, 180, 0.8); /* grey */
+  opacity: 0.9;
 }
 
 /* ===============================
@@ -1340,10 +1339,6 @@ section,
 ================================ */
 
 /* Make hero a positioning context */
-#hero {
-  position: relative;
-  overflow: hidden;
-}
 
 /* Push hero background image to back */
 #hero > img {
@@ -1361,16 +1356,6 @@ section,
   inset: 0;
   z-index: 2;
   pointer-events: none;
-}
-
-/* Fireflies themselves */
-.firefly {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: cyan;
-  opacity: 0.9;
 }
 
 /* ===============================
@@ -1444,14 +1429,16 @@ section,
 /* Override template centering for hero */
 #hero .container {
   display: block !important;
+}
 
-  /* Fix typed text underline & color */
+/* Fix typed text underline & color */
 .hero-subtext .typed,
 .hero-subtext .typed-cursor {
   text-decoration: none !important;
   border-bottom: none !important;
   color: inherit;
 }
+
 
 @media (max-width: 768px) {
 
@@ -1466,4 +1453,45 @@ section,
     margin-bottom: 20px;
   }
 
+}
+
+/* =========================================
+   EDUCATION & CERTIFICATIONS LAYOUT
+========================================= */
+
+.logo-item {
+  flex: 0 0 30%;
+  text-align: center;
+}
+
+.logo-item img {
+  max-width: 140px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.logo-item span {
+  display: block;
+  font-size: 0.9rem;
+}
+
+/* ================= MOBILE FIX ================= */
+
+@media (max-width: 768px) {
+
+  .logo-item {
+    flex: 0 0 100%;
+  }
+
+  .logo-item img {
+    max-width: 120px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .logos-container {
+    grid-template-columns: 1fr;
+  }
 }
