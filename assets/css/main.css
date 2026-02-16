@@ -1509,6 +1509,8 @@ section,
   height: 70px;
   width: auto;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -1516,6 +1518,7 @@ section,
     height: 60px;
   }
 }
+
 
 .logo-item img {
   filter: grayscale(100%);
